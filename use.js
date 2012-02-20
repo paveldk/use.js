@@ -15,7 +15,7 @@ define({
   load: function(name, req, load, config) {
     // Dojo provides access to the config object through the req function.
     if (!config) {
-      config = require.rawConfig;
+      config = req.rawConfig;
     }
 
     var module = config.use && config.use[name];
