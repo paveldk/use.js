@@ -32,6 +32,12 @@ define({
   // function, done callback, and the configuration options.
   load: function(name, req, load, config) {
     var i, buildModule;
+
+    // Dojo provides access to the config object through the req function.
+    if (!config) {
+      config = req.rawConfig;
+    }
+
     var module = config.use && config.use[name];
     var random = "use_" + Math.floor(Math.random()*10000)+10000;
 
